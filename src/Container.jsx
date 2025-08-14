@@ -1,7 +1,11 @@
+import StatsContainer from "./StatsContainer";
+import WordInput from "./WordInput";
+
 export default function Container() {
 	return (
-		<header>
-			<h1>Container</h1>
-		</header>
+		<main className="container">
+			<WordInput />
+			<StatsContainer />
+		</main>
 	);
 }
