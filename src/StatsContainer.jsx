@@ -8,3 +8,8 @@ export default function StatsContainer() {
 		</section>
 	);
 }
+
+// const wordCounter = ({ text }) => {
+// 	let wordsFromInput = text.split(" ");
+
+// };

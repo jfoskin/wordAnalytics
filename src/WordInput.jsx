@@ -1,13 +1,24 @@
+import { useState } from "react";
+
 export default function WordInput() {
+	const [text, setText] = useState("");
+
+	const handleChange = (event) => {
+		let newText = event.target.value;
+		if (newText.includes("<script>")) {
+			alert("Scripting Tags not allowed");
+			newText = newText.replace("<script>", "");
+		}
+		setText(newText);
+	};
+
 	return (
-		<div>
-			<label htmlFor="wordInput">Enter your words:</label>
-			<textarea
-				type="text"
-				placeholder="Enter your words"
-				id="wordInput"
-				className="textarea"
-			/>
-		</div>
+		<textarea
+			value={text}
+			placeholder="Enter your words"
+			id="wordInput"
+			className="textarea"
+			onChange={handleChange}
+		/>
 	);
 }
