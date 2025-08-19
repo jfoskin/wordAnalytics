@@ -15,6 +15,8 @@ export default function WordInput() {
 		if (text.includes("<script>")) {
 			setWarningText("No scripting tags allowed");
 			text = text.replace("<script>", "");
+
+			//regex example (/a/.test(text)) of how the below line can be written
 		} else if (text.includes("@", " ")) {
 			setWarningText("No @ symbols allowed");
 			text = text.replace("@", " ");
