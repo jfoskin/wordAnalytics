@@ -1,14 +1,15 @@
 import { useState } from "react";
 import Warning from "./Warning";
 
-export default function WordInput() {
-	const [text, setText] = useState("");
+export default function WordInput({ text, setText }) {
+	// const [text, setText] = useState("");
 	const [warningText, setWarningText] = useState("");
 
 	//setup dynamic rendering
 
 	const handleChange = (event) => {
 		let text = event.target.value;
+		console.log(event);
 
 		//basic validation
 
