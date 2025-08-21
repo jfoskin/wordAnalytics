@@ -1,21 +1,19 @@
 import { useState } from "react";
 
-export default function StatsContainer({ count, numberOfWords }) {
+export default function StatsContainer({ stats }) {
 	// const handleCountChange = (event) => {
 	// 	const count = event.target.value.length;
 	// 	console.log(count);
 	// };
 
-	let igCount = 280 - count;
-	let fbCount = 2200 - count;
 	// let wordCount = count.includes(" ") ? count.split(" ").length : 1;
 
 	return (
 		<section className="stats">
-			<Stat label="Words" number={numberOfWords} />
-			<Stat label="Characters" number={count} />
-			<Stat label="Instagram" number={igCount} />
-			<Stat label="Facebook" number={fbCount} />
+			<Stat label="Words" number={stats.numberOfWords} />
+			<Stat label="Characters" number={stats.count} />
+			<Stat label="Instagram" number={stats.igCount} />
+			<Stat label="Facebook" number={stats.fbCount} />
 		</section>
 	);
 }

@@ -5,37 +5,19 @@ import WordInput from "./WordInput";
 
 export default function Container() {
 	const [text, setText] = useState("");
-	let numberOfWords = text.split(/\s/).filter((word) => word !== "").length;
 	let count = text.length;
-	// const [warningText, setWarningText] = useState("");
+	let numberOfWords = text.split(/\s/).filter((word) => word !== "").length;
+	let igCount = 280 - count;
+	let fbCount = 2200 - count;
 
-	// //setup dynamic rendering
-	// const count = text.length;
-
-	// const handleChange = (event) => {
-	// 	let text = event.target.value;
-	// 	console.log(text.length);
-
-	// 	//basic validation
-
-	// 	if (text.includes("<script>")) {
-	// 		setWarningText("No scripting tags allowed");
-	// 		text = text.replace("<script>", "");
-
-	// 		//regex example (/a/.test(text)) of how the below line can be written
-	// 	} else if (text.includes("@", " ")) {
-	// 		setWarningText("No @ symbols allowed");
-	// 		text = text.replace("@", " ");
-	// 	} else {
-	// 		setWarningText("");
-	// 	}
-	// 	setText(text);
-	// };
+	// Create stats object to pass to StatsContainer
+	// This allows for easier management of stats and avoids prop drilling
+	const stats = { count, numberOfWords, igCount, fbCount };
 
 	return (
 		<main className="container">
 			<WordInput text={text} setText={setText} />
-			<StatsContainer count={count} numberOfWords={numberOfWords} />
+			<StatsContainer stats={stats} />
 		</main>
 	);
 }

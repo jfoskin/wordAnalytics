@@ -9,7 +9,6 @@ export default function WordInput({ text, setText }) {
 
 	const handleChange = (event) => {
 		let text = event.target.value;
-		console.log(event);
 
 		//basic validation
 
